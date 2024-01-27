@@ -21,7 +21,7 @@ The push command creates or updates a document at TypeHub.
 * __document_name__  
   The name of your document
 * __schema_file__  
-  Optional 
+  Contains the TypeAPI specification which you want to push to TypeHub 
 * __--client-id__  
   The client id is either your username or an app key which you can create at our backend.
 * __--client-secret__  
