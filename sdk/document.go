@@ -8,7 +8,7 @@ import "time"
 type Document struct {
 	Id          int       `json:"id"`
 	User        User      `json:"user"`
-	Source      Document  `json:"source"`
+	Source      *Document `json:"source"`
 	Status      int       `json:"status"`
 	Stars       int       `json:"stars"`
 	Name        string    `json:"name"`
