@@ -15,7 +15,7 @@ func init() {
 }
 
 var pushCmd = &cobra.Command{
-	Use:   "push",
+	Use:   "push [document] [schema_file]",
 	Short: "Push a local document to TypeHub",
 	Args:  cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
