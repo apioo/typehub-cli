@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/apioo/sdkgen-go"
-	"github.com/apioo/typehub-cli/sdk"
+	"github.com/apioo/typehub-sdk-go/sdk"
 	"log"
 	"os"
 )
@@ -34,14 +34,7 @@ func (sdkClient *SdkClient) GetClient() *sdk.Client {
 		log.Fatal("No client secret provided, please provide a client secret either through the --client-secret flag or environment variable TYPEHUB_CLIENT_SECRET")
 	}
 
-	credentials := sdkgen.OAuth2{
-		ClientId:     sdkClient.ClientId,
-		ClientSecret: sdkClient.ClientSecret,
-		TokenUrl:     "https://api.typehub.cloud/authorization/token",
-		TokenStore:   tokenStore,
-	}
-
-	client, err := sdk.NewClient("https://api.typehub.cloud", credentials)
+	client, err := sdk.Build(sdkClient.ClientId, sdkClient.ClientSecret, tokenStore, nil)
 	if err != nil {
 		log.Fatal(err)
 	}

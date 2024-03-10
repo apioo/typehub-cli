@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/apioo/typehub-cli/sdk"
+	"github.com/apioo/typehub-sdk-go/sdk"
 	"github.com/spf13/cobra"
 	"log"
 )
@@ -29,7 +29,7 @@ var triggerCmd = &cobra.Command{
 			log.Fatal(err)
 		}
 
-		// im
+		// add trigger
 		config := sdk.TriggerConfig{}
 		config["owner"] = owner
 		config["repo"] = repo
@@ -38,7 +38,7 @@ var triggerCmd = &cobra.Command{
 
 		trigger := sdk.TriggerCreate{
 			Type:   "github",
-			Config: config,
+			Config: &config,
 		}
 
 		message, err := client.Trigger().Create(user.Name, documentName, trigger)

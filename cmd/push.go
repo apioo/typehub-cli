@@ -3,7 +3,7 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/apioo/typehub-cli/sdk"
+	"github.com/apioo/typehub-sdk-go/sdk"
 	"github.com/spf13/cobra"
 	"io"
 	"log"
