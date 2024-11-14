@@ -1,0 +1,8 @@
+services:
+  typehub:
+    build: .
+    environment:
+      TYPEHUB_CLIENT_ID: "${TYPEHUB_CLIENT_ID}"
+      TYPEHUB_CLIENT_SECRET: "${TYPEHUB_CLIENT_SECRET}"
+    volumes:
+      - ./input:/usr/src/typehub/input
